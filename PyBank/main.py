@@ -37,6 +37,11 @@ Greatest Decrease in Profits: Sep-2013 (${min(changes)})"""
 
 print(financial_results)
 
+file_path = os.path.join("analysis", "data.txt")
+
+f = open(file_path, "w")
+f.write(financial_results)
+f.close()
 
 # Total net profit/loss
 

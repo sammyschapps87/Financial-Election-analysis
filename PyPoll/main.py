@@ -2,7 +2,7 @@ import os
 import csv
 
 
-election_path = os.path.join('election_data.csv')
+election_path = os.path.join("Resources",'election_data.csv')
 total_votes = 0 
 votes_khan = 0
 votes_correy = 0
@@ -34,6 +34,8 @@ with open(election_path) as csvfile:
     percent_Li = (votes_li/total_votes)*100
     percent_otooley = (votes_otooley/total_votes)*100
     
+
+
 
 # print(f"Khan: {votes_khan}")
 # print(percent_khan)
@@ -71,5 +73,10 @@ O'Tooley: {round(percent_otooley, 1)}% ({votes_otooley})
 Winner: {winner}
 -------------------------"""
 print(election_results)
-# csv.write("Election Results")
-# csv.write('\n')
+
+file_path = os.path.join("analysis","data.txt")
+
+f = open(file_path, "w")
+f.write(election_results)
+f.close()
+
